@@ -60,7 +60,7 @@ To run this project, you will need to add the following environment variables to
 
 `SKIP_PREFLIGHT_CHECK` :: `true`
 
-[sample .env file](https://github.com/egovernments/Digit-Core/blob/workbench/frontend/micro-ui/web/micro-ui-internals/example/.env-unifieddev)
+[water_connection .env file](https://github.com/egovernments/Digit-Core/blob/workbench/frontend/micro-ui/web/micro-ui-internals/example/.env-unifieddev)
 
 ## Tech Stack
 

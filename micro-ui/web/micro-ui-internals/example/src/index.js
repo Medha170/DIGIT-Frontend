@@ -4,12 +4,12 @@ import ReactDOM from "react-dom";
 import { initLibraries } from "@egovernments/digit-ui-libraries";
 // import { paymentConfigs, PaymentLinks, PaymentModule } from "@egovernments/digit-ui-module-common";
 import { DigitUI } from "@egovernments/digit-ui-module-core";
-import "@egovernments/digit-ui-sample-css/example/index.css";
+import "@egovernments/digit-ui-water_connection-css/example/index.css";
 
 import { pgrCustomizations } from "./pgr";
 import { UICustomizations } from "./UICustomizations";
 //import { initUtilitiesComponents } from "@egovernments/digit-ui-module-utilities";
-import {initSampleComponents} from "@egovernments/digit-ui-module-sample";
+import { initWaterConnectionComponents } from "@egovernments/digit-ui-module-water_connection";
 
 var Digit = window.Digit || {};
 
@@ -21,7 +21,7 @@ const enabledModules = [
   //  "Engagement", "NDSS","QuickPayLinks", "Payment",
   "Utilities",
   "Microplanning",
-  "Sample"
+  "WaterConnection",
   //added to check fsm
   // "FSM"
 ];
@@ -56,7 +56,7 @@ const initDigitUI = () => {
   window.contextPath = window?.globalConfigs?.getConfig("CONTEXT_PATH") || "digit-ui";
   window.Digit.Customizations = {
     PGR: pgrCustomizations,
-    commonUiConfig: UICustomizations
+    commonUiConfig: UICustomizations,
   };
   window?.Digit.ComponentRegistryService.setupRegistry({
     // PaymentModule,
@@ -65,15 +65,17 @@ const initDigitUI = () => {
   });
 
   //initUtilitiesComponents();
-  initSampleComponents();
+  initWaterConnectionComponents();
 
   const moduleReducers = (initData) => initData;
-
 
   const stateCode = window?.globalConfigs?.getConfig("STATE_LEVEL_TENANT_ID") || "pb";
   initTokens(stateCode);
 
-  ReactDOM.render(<DigitUI stateCode={stateCode} enabledModules={enabledModules}       defaultLanding="employee"  moduleReducers={moduleReducers} />, document.getElementById("root"));
+  ReactDOM.render(
+    <DigitUI stateCode={stateCode} enabledModules={enabledModules} defaultLanding="employee" moduleReducers={moduleReducers} />,
+    document.getElementById("root")
+  );
 };
 
 initLibraries().then(() => {

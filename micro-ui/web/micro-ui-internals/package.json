@@ -21,9 +21,9 @@
     "dev:css": "cd packages/css && yarn start",
     "publish:css": "cd packages/css && yarn && npm publish --tag workbench-1.0",
     "dev:example": "cd example && yarn start",
-    "dev:sample": "cd packages/modules/sample && yarn start",
+    "dev:water_connection": "cd packages/modules/water_connection && yarn start",
     "build": "run-p build:**",
-    "build:sample": "cd packages/modules/sample && yarn build",
+    "build:water_connection": "cd packages/modules/water_connection && yarn build",
     "deploy:jenkins": "./scripts/jenkins.sh",
     "clean": "rm -rf node_modules"
   },
